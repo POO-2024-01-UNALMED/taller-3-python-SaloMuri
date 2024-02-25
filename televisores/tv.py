@@ -38,8 +38,8 @@ class TV:
     def getControl(self):
         return self._control
     
-    def setNumTV(self):
-        self._numTV = 0
+    def setNumTV(self, numtv):
+        self._numTV = numtv
 
     @classmethod
     def getNumTV(cls):
