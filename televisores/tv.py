@@ -1,5 +1,5 @@
 class TV:
-    numTV = 0
+    _numTV = 0
     def __init__(self, marca, estado):
         self._marca = marca
         self._estado = estado
@@ -38,10 +38,13 @@ class TV:
     def getControl(self):
         return self._control
     
+    def setNumTV(self, numTV):
+        self._numTV = numTV
+
     @classmethod
     def getNumTV(cls):
-        cls.numTV += 1
-        return cls.numTV
+        cls._numTV += 1
+        return cls._numTV
     
     def turnOn(self):
         self.estado = True
