@@ -8,6 +8,7 @@ class Marca:
     def getNombre(self):
         return self._nombre
     
+
 class TV:
     numTV = 0
     def __init__(self, marca, estado):
@@ -47,3 +48,33 @@ class TV:
 
     def getControl(self):
         return self._control
+    
+    @classmethod
+    def getNumTV(cls):
+        cls.numTV += 1
+        return cls.numTV
+    
+    def turnOn(self):
+        self.estado = True
+
+    def turnOff(self):
+        self.estado = False
+
+    def getEstado(self):
+        return self._estado
+    
+    def canalUp(self):
+        if self._estado and self._canal < 120:
+            self._canal += 1
+
+    def canalDown(self):
+        if self._estado and self._canal > 1:
+            self._canal -= 1
+
+    def volumenUp(self):
+        if self._estado and self._volumen < 7:
+            self._volumen += 1
+
+    def volumenDown(self):
+        if self._estado and self._volumen > 0:
+            self._volumen -= 1
