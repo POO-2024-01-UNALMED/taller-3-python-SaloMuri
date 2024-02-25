@@ -32,6 +32,8 @@ class TV:
             self._volumen = volumen
         elif volumen > 7:
             self._volumen = 7
+        elif volumen < 0:
+            self._volumen = 0
 
     def getVolumen(self):
         return self._volumen
@@ -55,6 +57,7 @@ class TV:
 
     def turnOff(self):
         self._estado = False
+        self._volumen = 0
 
     def getEstado(self):
         return self._estado
