@@ -16,7 +16,12 @@ class TV:
         return self._marca
     
     def setCanal(self, canal):
-        self._canal = canal
+        if 1 <= canal <= 120:
+            self._canal = canal
+        elif canal < 1:
+            self._canal = 1
+        elif canal > 120:
+            self._canal = 120
 
     def getCanal(self):
         return self._canal
