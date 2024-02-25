@@ -7,6 +7,7 @@ class TV:
         self._precio = 500
         self._volumen = 1
         self._control = None
+        TV._numTV += 1
 
     def setMarca(self, marca):
         self._marca = marca
@@ -40,7 +41,6 @@ class TV:
 
     @classmethod
     def getNumTV(cls):
-        cls._numTV += 1
         return cls._numTV
     
     @classmethod
